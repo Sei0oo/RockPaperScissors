@@ -3,16 +3,24 @@ console.log(Math.floor(Math.random() * 3)+ 1);
 
 function getComputerChoice() {
     let num = Math.floor(Math.random() * 3) + 1
+    let choice;
 
     if (num === 1) {
-    console.log("rock");
+    choice = "rock";
 } else if (num === 2) {
-    console.log("paper");
+    choice = "paper";
 } else {
-    console.log("scissors");
+    choice = "scissors";
 }
+return choice;
 
 }  
 // to confirm my logic works
 console.log(getComputerChoice());
 
+function getHumanChoice() {
+    let choice = prompt("Make your stand; rock, paper or scissors")
+    console.log(choice);
+}
+
+getHumanChoice();
