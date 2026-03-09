@@ -14,20 +14,19 @@ function getComputerChoice() {
 return choice;
 
 }  
-// to confirm my logic works
-console.log(getComputerChoice());
 
 function getHumanChoice() {
     let choice = prompt("Make your stand; rock, paper or scissors")
     return choice;
 }
-//to confirm my logic works
-console.log(getHumanChoice());
 
-let humanScore = 0;
-let computerScore = 0;
+function playGame(){
 
-function playRound(humanChoice, computerChoice){
+       let humanScore = 0;
+    let computerScore = 0;
+
+    function playRound(humanChoice, computerChoice){
+
      humanChoice = humanChoice.toLowerCase();
      console.log(computerChoice);
     let outcome;
@@ -73,10 +72,16 @@ function playRound(humanChoice, computerChoice){
             console.log("please enter a valid choice, rock, paper or scissors");
         }
         
+       
 
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+ for (let i = 0; i < 5; i++){
+            playRound(getHumanChoice(), getComputerChoice());
+            console.log("Result of round " + (i + 1) + " You = " + humanScore + " CPU = " + computerScore);
+        
+        }
 
-playRound(humanSelection, computerSelection);
+}
+
+playGame();
